@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
+import LogoBlancoHorizontalv3 from '../assets/images/LogoBlancoHorizontalv3.png';
 const TopBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -18,7 +18,7 @@ const TopBar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="max-h-20">
-              <img src="/src/assets/images/LogoBlancoHorizontalv3.png" alt="O&P Eventos" className="h-28 rounded-md" />
+              <img src={LogoBlancoHorizontalv3} alt="O&P Eventos" className="h-28 rounded-md" />
             </Link>
           </div>
 
