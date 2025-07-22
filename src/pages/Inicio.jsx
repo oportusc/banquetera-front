@@ -18,7 +18,7 @@ const Inicio = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         {/* Título principal con estilo cursivo */}
         <div className="mb-12">
-          <h1 className="text-9xl font-kapakana text-gold-200 mb-6">
+          <h1 className="text-9xl font-kapakana text-amber-400 mb-6">
             O&P Eventos
           </h1>
           <div className="flex justify-center mb-8">

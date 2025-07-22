@@ -18,7 +18,7 @@ const TopBar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/">
-              <img src={LogoNegro} alt="O&P Eventos" className="h-24 rounded-md" />
+              <img src={LogoNegro} alt="OyPEventos" className="h-24 rounded-md" />
             </Link>
           </div>
 
