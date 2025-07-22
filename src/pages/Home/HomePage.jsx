@@ -1,8 +1,8 @@
 import React from 'react';
-import Inicio from './Inicio';
-import Nosotros from './Nosotros';
-import Galeria from './Galeria';
-import Contactanos from './Contactanos';
+import Inicio from './components/Inicio';
+import Nosotros from './components/Nosotros';
+import Galeria from './components/Galeria';
+import Contactanos from './components/Contactanos';
 
 const HomePage = () => {
   return (
