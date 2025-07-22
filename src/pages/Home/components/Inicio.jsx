@@ -26,7 +26,7 @@ const Inicio = () => {
                 <button className="border border-1 border-amber-400 p-3 rounded-md w-full sm:w-auto sm:min-w-48 md:min-w-60 hover:bg-amber-600 hover:border-amber-600 transition-colors">
                   Ver Nuestros Servicios
                 </button>
-                <button className="border border-1 border-amber-200 p-3 rounded-md w-full sm:w-auto sm:min-w-48 md:min-w-60 hover:bg-amber-600 hover:border-amber-600 transition-colors">
+                <button className="border border-1 border-amber-400 p-3 rounded-md w-full sm:w-auto sm:min-w-48 md:min-w-60 hover:bg-amber-600 hover:border-amber-600 transition-colors">
                   Solicitar Cotización
                 </button>
               </div>
