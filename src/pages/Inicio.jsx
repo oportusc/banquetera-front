@@ -18,7 +18,7 @@ const Inicio = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
         {/* Título principal con estilo cursivo */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-cursive italic text-gold-400 mb-6">
+          <h1 className="text-9xl font-kapakana text-gold-200 mb-6">
             O&P Eventos
           </h1>
           <div className="flex justify-center mb-8">
@@ -48,7 +48,7 @@ const Inicio = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-cursive italic text-gold-400 mb-3">Servicio Puntual</h3>
+            <h3 className="text-xl font-kapakana text-gold-400 mb-3">Servicio Puntual</h3>
             <p className="text-cream-200 font-elegant text-sm">Llegamos siempre a tiempo para que tu evento sea perfecto</p>
           </div>
           
@@ -58,7 +58,7 @@ const Inicio = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-cursive italic text-gold-400 mb-3">Calidad Premium</h3>
+            <h3 className="text-xl font-kapakana text-gold-400 mb-3">Calidad Premium</h3>
             <p className="text-cream-200 font-elegant text-sm">Ingredientes frescos y de la más alta calidad</p>
           </div>
           
@@ -68,7 +68,7 @@ const Inicio = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <h3 className="text-xl font-cursive italic text-gold-400 mb-3">Atención Personalizada</h3>
+            <h3 className="text-xl font-kapakana text-gold-400 mb-3">Atención Personalizada</h3>
             <p className="text-cream-200 font-elegant text-sm">Cada evento es único y merece atención especial</p>
           </div>
         </div>

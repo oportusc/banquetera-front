@@ -21,6 +21,7 @@ export default {
         }
       },
       fontFamily: {
+        'kapakana': ['Kapakana', 'cursive'],
         'cursive': ['Playfair Display', 'serif'],
         'elegant': ['Cormorant Garamond', 'serif'],
       }

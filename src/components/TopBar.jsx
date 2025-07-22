@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import LogoBlancoHorizontalv3 from '../assets/images/LogoBlancoHorizontalv3.png';
+import LogoNegro from '../assets/images/LogoCompletoPNG.png';
 const TopBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
@@ -14,11 +14,11 @@ const TopBar = () => {
   return (
     <nav className="bg-black text-white shadow-lg fixed w-full top-0 z-50 border-b border-gold-400/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-32">
+        <div className="flex justify-between items-center h-36">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <Link to="/" className="max-h-20">
-              <img src={LogoBlancoHorizontalv3} alt="O&P Eventos" className="h-28 rounded-md" />
+            <Link to="/">
+              <img src={LogoNegro} alt="O&P Eventos" className="h-24 rounded-md" />
             </Link>
           </div>
 
