@@ -22,6 +22,7 @@ export default {
       // },
       fontFamily: {
         'kapakana': ['Kapakana', 'cursive'],
+        'pinyon': ['Pinyon Script', 'cursive']
       }
     },
   },

@@ -6,7 +6,7 @@ const Nosotros = () => {
     <section id="nosotros" className="min-h-[90vh] bg-black text-white py-12">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-16">
-          <h2 className="text-8xl font-kapakana text-amber-500 font-medium leading-none">¿Quienes Somos?</h2>
+          <h2 className="text-7xl font-pinyon text-amber-500 font-medium leading-none">¿Quienes Somos?</h2>
           {/* <p className="text-xl text-cream-100 max-w-4xl mx-auto font-elegant">
             Más de 15 años de experiencia creando momentos inolvidables a través de la excelencia culinaria
           </p> */}

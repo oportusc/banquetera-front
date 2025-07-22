@@ -19,20 +19,35 @@ const Contactanos = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Aquí se manejaría el envío del formulario
-    console.log('Formulario enviado:', formData);
-    alert('¡Gracias por contactarnos! Te responderemos pronto.');
-    setFormData({
-      nombre: '',
-      email: '',
-      telefono: '',
-      tipoEvento: '',
-      fecha: '',
-      invitados: '',
-      mensaje: ''
-    });
+    
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({
+          'form-name': 'contact',
+          ...formData
+        })
+      });
+      
+      if (response.ok) {
+        alert('¡Gracias por contactarnos! Te responderemos pronto.');
+        setFormData({
+          nombre: '',
+          email: '',
+          telefono: '',
+          tipoEvento: '',
+          fecha: '',
+          invitados: '',
+          mensaje: ''
+        });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+    }
   };
 
   return (
@@ -49,7 +64,7 @@ const Contactanos = () => {
           {/* Información de contacto */}
           <div>
             <h3 className="text-2xl font-bold mb-8 text-gold-400">Información de Contacto</h3>
-            
+
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-gold-400 w-12 h-12 rounded-full flex items-center justify-center mr-4 mt-1">
@@ -128,8 +143,15 @@ const Contactanos = () => {
           {/* Formulario */}
           <div className="bg-gray-800 rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-8 text-gold-400">Solicita tu Cotización</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
+
+            <form 
+              onSubmit={handleSubmit} 
+              name="contact" 
+              method="POST" 
+              data-netlify="true"
+              className="space-y-6"
+            >
+              <input type="hidden" name="form-name" value="contact" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="nombre" className="block text-sm font-medium mb-2">
@@ -146,7 +168,7 @@ const Contactanos = () => {
                     placeholder="Tu nombre completo"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-medium mb-2">
                     Email *
@@ -179,7 +201,7 @@ const Contactanos = () => {
                     placeholder="+1 (555) 123-4567"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="tipoEvento" className="block text-sm font-medium mb-2">
                     Tipo de Evento *
@@ -193,10 +215,9 @@ const Contactanos = () => {
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-gold-400 text-white"
                   >
                     <option value="">Selecciona un tipo</option>
-                    <option value="boda">Boda</option>
-                    <option value="corporativo">Evento Corporativo</option>
-                    <option value="cumpleanos">Cumpleaños</option>
-                    <option value="quinceanera">Quinceañera</option>
+                    <option value="boda">Matrimonio</option>
+                    <option value="corporativo">Evento Empresa</option>
+                    <option value="cumpleanos">Graduacion</option>
                     <option value="otro">Otro</option>
                   </select>
                 </div>
@@ -205,7 +226,7 @@ const Contactanos = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="fecha" className="block text-sm font-medium mb-2">
-                    Fecha del Evento *
+                    Fecha Tentativa del Evento *
                   </label>
                   <input
                     type="date"
@@ -217,22 +238,26 @@ const Contactanos = () => {
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-gold-400 text-white"
                   />
                 </div>
-                
+
                 <div>
                   <label htmlFor="invitados" className="block text-sm font-medium mb-2">
                     Número de Invitados *
                   </label>
-                  <input
-                    type="number"
+                  <select
                     id="invitados"
                     name="invitados"
                     value={formData.invitados}
                     onChange={handleChange}
                     required
-                    min="1"
                     className="w-full px-4 py-3 bg-gray-700 border border-gray-600 rounded-lg focus:outline-none focus:border-gold-400 text-white"
-                    placeholder="50"
-                  />
+                  >
+                    <option value="">Selecciona el N° de personas</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="150">150</option>
+                    <option value="200">200</option>
+                    <option value="mas">250 o más</option>
+                  </select>
                 </div>
               </div>
 

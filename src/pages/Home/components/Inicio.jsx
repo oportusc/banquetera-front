@@ -12,7 +12,7 @@ const Inicio = () => {
         <div className="absolute inset-0 bg-black/60">
           <div className='flex flex-col text-center justify-center items-center h-full p-4 md:p-8 lg:p-12'>
             <div className="mb-6 md:mb-10 lg:mb-12">
-              <span className="text-9xl font-kapakana text-amber-500 font-medium leading-none">
+              <span className="text-8xl font-pinyon text-amber-500 font-medium leading-none">
                 O&P Eventos
               </span>
             </div>

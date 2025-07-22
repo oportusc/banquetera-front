@@ -65,7 +65,7 @@ const Galeria = () => {
     <section id="galeria" className="min-h-[90vh] bg-black text-white py-10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-8xl font-kapakana text-amber-500 font-medium leading-none">Nuestra Galería</h2>
+          <h2 className="text-7xl font-pinyon text-amber-500 font-medium leading-none">Nuestra Galería</h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
             Descubre algunos de nuestros eventos más memorables y la calidad de nuestro servicio
           </p>
