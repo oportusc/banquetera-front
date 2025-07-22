@@ -1,6 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { Button } from 'primereact/button';   
+import { Toast } from 'primereact/toast';
+
 
 const Contactanos = () => {
+  const toast = useRef(null);
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
@@ -19,9 +23,30 @@ const Contactanos = () => {
     }));
   };
 
-  const handleSubmit = async (e) => {
+    const handleSubmit = async (e) => {
     e.preventDefault();
     
+    // Simulación de envío exitoso para demostrar el toast
+    // En producción, descomenta el código de fetch abajo
+    // toast.current.show({
+    //   severity: 'success',
+    //   summary: '¡Éxito!',
+    //   detail: '¡Gracias por contactarnos! Te responderemos pronto.',
+    //   life: 5000,
+    //   className: 'bg-green-500 text-white border-green-600',
+    // });
+    
+    setFormData({
+      nombre: '',
+      email: '',
+      telefono: '',
+      tipoEvento: '',
+      fecha: '',
+      invitados: '',
+      mensaje: ''
+    });
+
+
     try {
       const response = await fetch('/', {
         method: 'POST',
@@ -33,7 +58,13 @@ const Contactanos = () => {
       });
       
       if (response.ok) {
-        alert('¡Gracias por contactarnos! Te responderemos pronto.');
+        toast.current.show({
+          severity: 'success',
+          summary: '¡Éxito!',
+          detail: '¡Gracias por contactarnos! Te responderemos pronto.',
+          life: 5000,
+          className: 'bg-green-500 text-white border-green-600'
+        });
         setFormData({
           nombre: '',
           email: '',
@@ -46,12 +77,20 @@ const Contactanos = () => {
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.');
+      toast.current.show({
+        severity: 'error',
+        summary: 'Error',
+        detail: 'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.',
+        life: 5000,
+        className: 'bg-red-500 text-white border-red-600'
+      });
     }
+
   };
 
   return (
     <section id="contactanos" className="min-h-screen bg-black text-white py-20">
+      <Toast ref={toast} />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gold-400">Contáctanos</h2>
@@ -144,10 +183,10 @@ const Contactanos = () => {
           <div className="bg-gray-800 rounded-lg p-8">
             <h3 className="text-2xl font-bold mb-8 text-gold-400">Solicita tu Cotización</h3>
 
-            <form 
-              onSubmit={handleSubmit} 
-              name="contact" 
-              method="POST" 
+            <form
+              onSubmit={handleSubmit}
+              name="contact"
+              method="POST"
               data-netlify="true"
               className="space-y-6"
             >
@@ -276,12 +315,14 @@ const Contactanos = () => {
                 ></textarea>
               </div>
 
-              <button
+              <Button
                 type="submit"
-                className="w-full bg-gold-400 text-black py-3 px-6 rounded-lg font-semibold text-lg hover:bg-gold-300 transition-colors duration-300 transform hover:scale-105"
+                className="w-full bg-white text-black rounded py-2 px-2"
+                severity='success'
+                onClick={handleSubmit}
               >
                 Enviar Solicitud
-              </button>
+              </Button>
             </form>
           </div>
         </div>
