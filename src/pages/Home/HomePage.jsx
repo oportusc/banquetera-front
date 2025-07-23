@@ -9,7 +9,7 @@ const HomePage = () => {
     <>
       <Inicio />
       <Nosotros />
-      <Galeria />
+      {/* <Galeria /> */}
       <Contactanos />
     </>
   );

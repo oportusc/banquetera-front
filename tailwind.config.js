@@ -21,8 +21,11 @@ export default {
       //   }
       // },
       fontFamily: {
-        'kapakana': ['Kapakana', 'cursive'],
-        'pinyon': ['Pinyon Script', 'cursive']
+        'pinyon': ['Pinyon Script', 'cursive'],
+        'roboto':['Roboto', 'sans-serif'],
+        'sans': ['Roboto', 'sans-serif'],
+        'serif': ['Roboto', 'serif'],
+        'mono': ['Roboto Mono', 'monospace']
       }
     },
   },

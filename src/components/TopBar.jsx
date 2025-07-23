@@ -36,7 +36,7 @@ const TopBar = () => {
               <Link 
                 key={index} 
                 to={item.href} 
-                className="text-white hover:text-amber-600 hover:bg-amber-50 hover:font-semibold px-2 py-1 rounded-md transition-colors"
+                className="text-white font-roboto font-light hover:text-amber-600 hover:bg-amber-50 hover:font-semibold px-2 py-1 rounded-md transition-colors"
                 onClick={closeMenu}
               >
                 {item.name}
