@@ -21,11 +21,11 @@ export default {
       //   }
       // },
       fontFamily: {
-        'pinyon': ['Pinyon Script', 'cursive'],
-        'roboto':['Roboto', 'sans-serif'],
-        'sans': ['Roboto', 'sans-serif'],
-        'serif': ['Roboto', 'serif'],
-        'mono': ['Roboto Mono', 'monospace']
+        'cormorant': ['Cormorant Garamond', 'serif'],
+        'inter':["Inter", 'sans-serif'],
+        'sans': ["Inter", 'sans-serif'],
+        'serif': ["Inter", 'sans-serif'],
+        'mono': ["Inter", 'sans-serif'],
       }
     },
   },

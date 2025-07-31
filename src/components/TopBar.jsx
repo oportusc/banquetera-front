@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import LogoNegro from '../assets/images/LogoCompletoPNG.png';
+import LogoNegro from '../assets/images/LogoPNG.png';
 
 const TopBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,7 +24,7 @@ const TopBar = () => {
   return (
     <nav className="bg-black text-white fixed w-full top-0 z-50">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-between items-center h-20 md:h-28">
+        <div className="flex justify-between items-center h-24">
           {/* Logo */}
           <Link to="/" onClick={closeMenu}>
             <img src={LogoNegro} alt="OyPEventos" className="h-16 md:h-24" />
@@ -36,7 +36,7 @@ const TopBar = () => {
               <Link 
                 key={index} 
                 to={item.href} 
-                className="text-white font-roboto font-light hover:text-amber-600 hover:bg-amber-50 hover:font-semibold px-2 py-1 rounded-md transition-colors"
+                className="text-white font-inter font-light hover:text-amber-600 hover:bg-amber-50 hover:font-semibold px-2 py-1 rounded-md transition-colors"
                 onClick={closeMenu}
               >
                 {item.name}

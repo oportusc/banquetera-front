@@ -1,4 +1,5 @@
 import React from 'react';
+import logoCompleto from '../../../assets/images/prueba.png'
 
 const Inicio = () => {
   return (
@@ -10,11 +11,12 @@ const Inicio = () => {
         }}
       >
         <div className="absolute inset-0 bg-black/60">
-          <div className='flex flex-col text-center justify-center items-center h-full p-4 md:p-8 lg:p-12'>
-            <div className="mb-6 md:mb-10 lg:mb-12">
-              <span className="text-8xl font-pinyon text-amber-500 font-medium leading-none">
+          <div className='flex flex-col text-center justify-center items-center gap-y-16 h-full p-4 md:p-8 lg:p-12'>
+            <div className="">
+              {/* <span className="text-8xl font-cormorant italic text-amber-500 font-medium leading-none">
                 O&P Eventos
-              </span>
+              </span> */}
+              <img src={logoCompleto} alt="" className='' />
             </div>
             <div className='flex flex-col gap-y-8 md:gap-y-10 lg:gap-y-12'>
               <div className='flex w-full md:w-3/4 lg:w-1/2 mx-auto px-4'>
@@ -31,7 +33,7 @@ const Inicio = () => {
                 </button>
               </div>
             </div>
-            <div className="hidden sm:flex md:flex-row justify-center gap-8 md:gap-12 lg:gap-20 xl:gap-40 mt-12 md:mt-16 lg:mt-20 px-4">
+            {/* <div className="hidden sm:flex md:flex-row justify-center gap-8 md:gap-12 lg:gap-20 xl:gap-40 px-4">
               <div className="text-center">
                 <div className="w-12 h-12 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-3">
                   <svg className="w-6 h-6 md:w-8 md:h-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -61,7 +63,7 @@ const Inicio = () => {
                 <h3 className="text-lg md:text-xl text-gold-400 mb-2 md:mb-3">Atención Personalizada</h3>
                 <p className="text-cream-200 font-elegant text-xs md:text-sm">Cada evento es único y merece atención especial</p>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

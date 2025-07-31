@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Button } from 'primereact/button';   
+import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
 
 
@@ -23,9 +23,9 @@ const Contactanos = () => {
     }));
   };
 
-    const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Simulación de envío exitoso para demostrar el toast
     // En producción, descomenta el código de fetch abajo
     // toast.current.show({
@@ -35,7 +35,7 @@ const Contactanos = () => {
     //   life: 5000,
     //   className: 'bg-green-500 text-white border-green-600',
     // });
-    
+
     setFormData({
       nombre: '',
       email: '',
@@ -56,7 +56,7 @@ const Contactanos = () => {
           ...formData
         })
       });
-      
+
       if (response.ok) {
         toast.current.show({
           severity: 'success',
@@ -89,19 +89,14 @@ const Contactanos = () => {
   };
 
   return (
-    <section id="contactanos" className="min-h-screen bg-black text-white py-20">
+    <section id="contactanos" className="bg-black text-white py-12 sm:py-10">
       <Toast ref={toast} />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gold-400">Contáctanos</h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Estamos aquí para hacer tu evento inolvidable. ¡Conversemos sobre tus ideas!
-          </p>
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-8">
+        <div className="text-center">
+          <h2 className="text-6xl sm:text-7xl text-center font-cormorant text-amber-500 font-medium leading-none">Contáctanos</h2>
         </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Información de contacto */}
-          <div>
+        <div className="flex justify-center pt-10 sm:pt-12">
+          {/* <div>
             <h3 className="text-2xl font-bold mb-8 text-gold-400">Información de Contacto</h3>
 
             <div className="space-y-6">
@@ -159,7 +154,6 @@ const Contactanos = () => {
               </div>
             </div>
 
-            {/* Servicios destacados */}
             <div className="mt-12">
               <h4 className="text-xl font-bold mb-6 text-gold-400">Nuestros Servicios</h4>
               <div className="grid grid-cols-1 gap-4">
@@ -177,18 +171,17 @@ const Contactanos = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Formulario */}
-          <div className="bg-gray-800 rounded-lg p-8">
+          <div className="bg-slate-600 rounded-lg p-4 sm:p-8 w-[100vh]">
             <h3 className="text-2xl font-bold mb-8 text-gold-400">Solicita tu Cotización</h3>
-
             <form
               onSubmit={handleSubmit}
               name="contact"
               method="POST"
               data-netlify="true"
-              className="space-y-6"
+              className="space-y-4"
             >
               <input type="hidden" name="form-name" value="contact" />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

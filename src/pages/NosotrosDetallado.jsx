@@ -5,33 +5,22 @@ import ejemplo from '../assets/images/ejemplo.webp'
 const NosotrosDetallado = () => {
   return (
     <div className="min-h-screen bg-black text-white">
-      <main className="sm:pt-10">
-        {/* <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-black">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-gold-400">
-              Nuestra Historia
-            </h1>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto">
-              Más de 15 años creando experiencias gastronómicas inolvidables
-            </p>
-          </div>
-        </section> */}
-
-        <section className="py-8 sm:py-12">
-          <h2 className="text-6xl font-medium text-amber-500 font-pinyon text-center">El Inicio de Nuestro Sueño</h2>
+      <main className="">
+        <section className="py-8">
+          <h2 className="sm:text-6xl text-5xl font-medium italic text-amber-500 font-cormorant text-center">El Inicio de Nuestro Sueño ...</h2>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mt-12">
-              <div className='flex flex-col gap-6'>
-                <p className="text-gray-300 leading-relaxed text-md text-justify">
+              <div className='flex flex-col gap-6 text-gray-300 leading-relaxed text-sm sm:text-lg text-justify'>
+                <p className="">
                   <b>O&P Eventos</b> nace de una historia compartida: la de Oscar y Pachi, una pareja que se conoció trabajando en eventos y que, desde el primer momento, soñó con crear algo propio. Un proyecto que uniera lo que más nos apasiona: la hospitalidad, la gastronomía y ser parte de momentos inolvidables en la vida de otras personas.
                 </p>
-                <p className="text-gray-300 leading-relaxed text-md text-justify">
+                <p className="">
                   Después de la pandemia, nos conocimos en un evento y la conexión fue inmediata. Pachi, con amplia experiencia en cafeterías y restaurantes, siempre se ha destacado por su cercanía, amabilidad y una atención genuina que marca la diferencia. Oscar, con más de ocho años trabajando como cocinero, garzón, jefe de servicio y maître, conoce a fondo el ritmo y las exigencias de los eventos, siempre con un trato cálido, profesional y humano.
                 </p>
-                <p className="text-gray-300 leading-relaxed text-md text-justify">
+                <p className="">
                   Juntos descubrimos que nuestras fortalezas se complementaban naturalmente, y que podíamos ofrecer algo distinto: eventos con alma, donde cada detalle importa.
                 </p>
-                <p className="text-gray-300 leading-relaxed text-md text-justify">
+                <p className="">
                   <b>O&P Eventos</b> tiene como sello la amabilidad, la cordialidad y la responsabilidad. Sabemos que los eventos pueden ser masivos, rápidos y exigentes, pero eso nunca debe ser excusa para descuidar la calidad ni la atención personalizada. Nuestro compromiso es crear experiencias memorables, con disposición, cariño y excelencia, acompañados siempre por un equipo que comparte nuestros valores.
                 </p>
               </div>
@@ -41,7 +30,7 @@ const NosotrosDetallado = () => {
             </div>
 
             {/* Filosofía */}
-            <div className="text-center py-12">
+            {/* <div className="text-center py-12">
               <h2 className="text-4xl font-bold mb-8 text-gold-400">Nuestra Filosofía</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-gray-800 rounded-lg p-8">
@@ -83,10 +72,10 @@ const NosotrosDetallado = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* Equipo Detallado */}
-            <div className="mb-20">
+            {/* <div className="mb-20">
               <h2 className="text-4xl font-bold mb-12 text-center text-gold-400">Nuestro Equipo</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <div className="bg-gray-800 rounded-lg p-8 text-center">
@@ -134,10 +123,10 @@ const NosotrosDetallado = () => {
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* CTA */}
-            <div className="text-center bg-gray-800 rounded-lg p-12">
+            {/* <div className="text-center bg-gray-800 rounded-lg p-12">
               <h2 className="text-3xl font-bold mb-6 text-gold-400">¿Listo para crear tu evento perfecto?</h2>
               <p className="text-xl text-gray-300 mb-8">
                 Permítenos ser parte de tu historia y crear momentos inolvidables
@@ -156,7 +145,7 @@ const NosotrosDetallado = () => {
                   Ver Nuestros Trabajos
                 </Link>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
       </main>
