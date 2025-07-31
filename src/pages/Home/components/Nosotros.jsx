@@ -10,7 +10,7 @@ const Nosotros = () => {
           <div className='flex flex-col gap-8 text-center'>
             <h2 className="text-6xl sm:text-7xl text-center font-cormorant text-amber-500 font-medium leading-none">¿Quiénes Somos?</h2>
             <p className="text-cream-200 leading-relaxed text-lg">
-              O&P Eventos nace del encuentro de dos personas con vocación por el servicio y la hospitalidad.
+              <b>O&P Eventos</b> nace del encuentro de dos personas con vocación por el servicio y la hospitalidad.
               Una historia que comenzó trabajando en eventos, uniendo experiencia, cariño y el sueño compartido de crear celebraciones con sentido.
             </p>
             <p className="text-cream-200 leading-relaxed text-lg">

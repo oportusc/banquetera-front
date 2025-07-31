@@ -24,7 +24,7 @@ const Inicio = () => {
                   Transformamos tus eventos en experiencias inolvidables con el mejor servicio de banqueteria en la V Región.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 items-center justify-center px-4">
+              <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-8 items-center justify-center px-4 font-semibold">
                 <button className="border border-1 border-amber-400 p-3 rounded-md w-full sm:w-auto sm:min-w-48 md:min-w-60 hover:bg-amber-600 hover:border-amber-600 transition-colors">
                   Ver Nuestros Servicios
                 </button>

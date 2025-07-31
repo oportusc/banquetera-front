@@ -11,31 +11,36 @@ const Servicios = () => {
       id: 1,
       titulo: "Matrimonios",
       descripcion: "Celebraciones únicas e inolvidables",
-      imagen: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      imagen: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      urlParam: "matrimonios"
     },
     {
       id: 2,
       titulo: "Eventos Empresa",
       descripcion: "Eventos profesionales para empresas",
-      imagen: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      imagen: "https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      urlParam: "eventos-empresa"
     },
     {
       id: 3,
       titulo: "Graduaciones",
       descripcion: "Experiencia culinaria de alta calidad",
-      imagen: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      imagen: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      urlParam: "graduaciones"
     },
     {
       id: 4,
       titulo: "Cumpleaños",
       descripcion: "Celebraciones con estilo y elegancia",
-      imagen: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      imagen: "https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      urlParam: "cumpleanos"
     },
     {
       id: 5,
       titulo: "Coffee Break",
       descripcion: "El intermedio ideal para las reuniones",
-      imagen: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+      imagen: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
+      urlParam: "coffee-break"
     }
   ];
 
@@ -57,8 +62,8 @@ const Servicios = () => {
                     />
                     <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
                       <Link
-                        to="/nosotros"
-                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-1 border-amber-400 hover:bg-amber-600 hover:border-amber-600 text-white font-semibold px-6 py-3 rounded-md"
+                        to={`/servicios?servicio=${servicio.urlParam}`}
+                        className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 border border-1 border-amber-400 hover:bg-amber-600 hover:border-amber-600 text-white font-semibold px-6 py-2 rounded-md"
                       >
                         Ver más
                       </Link>
