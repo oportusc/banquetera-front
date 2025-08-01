@@ -79,13 +79,13 @@ const Contactanos = ({detallado}) => {
   return (
     <section id="contactanos" className={`bg-black text-white ${detallado ? 'sm:py-8':'py-10 sm:py-12'} `}>
       <Toast ref={toast} />
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-8">
+      <div className="w-[120vh] mx-auto px-4 sm:px-8">
         <div className="text-center">
           <h2 className={`${detallado ? 'italic text-5xl sm:text-6xl': 'text-6xl sm:text-7xl'} text-center font-cormorant text-amber-500 font-medium leading-none`}>Solicita tu Cotización</h2>
         </div>
         <div className="pt-10 sm:pt-20">
           {/* Formulario con Formik */}
-          <div className="bg-slate-600 rounded-lg p-4 sm:p-8 sm:w-[120vh]">
+          <div className="w-full bg-slate-600 rounded-lg p-4 sm:p-8">
             {/* <div className='flex'>
               <h3 className="text-4xl font-semibold mb-8 text-gold-400 font-cormorant text-amber-500 mx-auto">Solicita tu Cotización</h3>
             </div> */}
