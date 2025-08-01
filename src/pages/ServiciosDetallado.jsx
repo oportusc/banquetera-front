@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { Divider } from 'primereact/Divider';
 import TabCustom from './components/TabCustom';
 
 const ServiciosDetallado = () => {
