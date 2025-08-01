@@ -3,14 +3,14 @@
 const TabCustom = ({ title, isActive, onClick }) => {
   return (
     <div 
-      className={`px-4 py-2 rounded-t-md cursor-pointer transition-all duration-300 ${
+      className={`w-full p-2 cursor-pointer transition-all duration-300 font-cormorant text-xl ${
         isActive 
-          ? 'bg-amber-500 text-black font-semibold' 
-          : 'bg-slate-600 text-gray-300 hover:bg-slate-500'
+          ? 'text-amber-400 font-semibold' 
+          : 'text-white'
       }`}
       onClick={onClick}
     >
-      <p className="text-sm font-medium">{title}</p>
+      <p className="font-semibold italic">{title}</p>
     </div>
   );
 };

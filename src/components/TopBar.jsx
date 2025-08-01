@@ -9,7 +9,8 @@ const TopBar = () => {
   const navigationItems = [
     { name: 'Inicio', href: '/', anchor: '#inicio' },
     { name: 'Nosotros', href: '/nosotros', anchor: '#nosotros' },
-    { name: 'Galería', href: '/galeria', anchor: '#galeria' },
+    // { name: 'Galería', href: '/galeria', anchor: '#galeria' },
+    { name: 'Servicios', href: '/servicios', anchor: '#servicios' },
     { name: 'Contáctanos', href: '/contactanos', anchor: '#contactanos' }
   ];
 

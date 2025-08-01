@@ -7,6 +7,7 @@ import NosotrosDetallado from './pages/NosotrosDetallado';
 import GaleriaDetallado from './pages/GaleriaDetallado';
 import ServiciosDetallado from './pages/ServiciosDetallado';
 import ScrollToTop from './components/ScrollToTop';
+import ContactanosDetallado from './pages/ContactanosDetallado';
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/nosotros" element={<NosotrosDetallado />} />
-            <Route path="/galeria" element={<GaleriaDetallado />} />
             <Route path="/servicios" element={<ServiciosDetallado />} />
+            <Route path="/contactanos" element={<ContactanosDetallado />} />
+            {/* <Route path="/galeria" element={<GaleriaDetallado />} /> */}
             {/* Aquí puedes agregar más rutas para otras páginas detalladas */}
           </Routes>
         </MainLayout>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import { TabView, TabPanel } from 'primereact/tabview';
+import { Divider } from 'primereact/Divider';
 import TabCustom from './components/TabCustom';
 
 const ServiciosDetallado = () => {
@@ -53,7 +53,7 @@ const ServiciosDetallado = () => {
     },
     {
       id: 'eventos-empresa',
-      titulo: 'Eventos Empresa',
+      titulo: 'Empresas',
       descripcion: 'Eventos profesionales para empresas',
       imagen: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       imagenSecundaria: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
@@ -236,117 +236,148 @@ const ServiciosDetallado = () => {
     <div className="min-h-screen bg-black text-white">
       <main className="">
         <section className="py-8">
-          <h2 className="sm:text-6xl text-5xl font-medium italic text-amber-500 font-cormorant text-center mb-8">
-            Nuestros Servicios Detallados
+          <h2 className="sm:text-6xl text-5xl font-medium italic text-amber-500 font-cormorant text-center mb-4">
+            Nuestros Servicios
           </h2>
+          <h3 className=" text-4xl sm:text-3xl font-medium text-amber-400 font-cormorant text-center mb-8">
+            {serviciosDetallados[activeIndex].titulo}
+          </h3>
 
-                     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-             {/* Tabs personalizados */}
-             <div className='flex justify-center gap-1 mb-8'>
-               {serviciosDetallados.map((servicio, index) => (
-                 <TabCustom
-                   key={servicio.id}
-                   title={servicio.titulo}
-                   isActive={activeIndex === index}
-                   onClick={() => setActiveIndex(index)}
-                 />
-               ))}
-             </div>
+          <div className="max-w-screen-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Layout con tabs a la izquierda y contenido a la derecha */}
+            <div className="flex flex-col lg:flex-row gap-8">
+              {/* Panel de tabs a la izquierda */}
+              <div className="sm:w-2/12">
+                <div className="space-y-2 pt-20">
+                  {serviciosDetallados.map((servicio, index) => (
+                    <TabCustom
+                      key={servicio.id}
+                      title={servicio.titulo}
+                      isActive={activeIndex === index}
+                      onClick={() => setActiveIndex(index)}
+                    />
+                  ))}
+                </div>
+              </div>
 
-             {/* Contenido del servicio seleccionado */}
-             <div className="bg-slate-800 rounded-b-lg rounded-tr-lg p-8">
-               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-                 {/* Galería de Imágenes */}
-                 <div className="order-2 lg:order-1 space-y-4">
-                   <img
-                     src={serviciosDetallados[activeIndex].imagen}
-                     alt={serviciosDetallados[activeIndex].titulo}
-                     className="w-full h-96 object-cover rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
-                   />
-                   <img
-                     src={serviciosDetallados[activeIndex].imagenSecundaria}
-                     alt={`${serviciosDetallados[activeIndex].titulo} - Detalle`}
-                     className="w-full h-64 object-cover rounded-lg shadow-lg transition-all duration-300 hover:scale-105"
-                   />
-                 </div>
+              {/* Divider vertical */}
+              <div className="hidden sm:block w-px bg-slate-400 shadow-xl shadow-amber-300">
+              </div>
 
-                 {/* Contenido */}
-                 <div className="order-1 lg:order-2 space-y-6">
-                   <div>
-                     <h3 className="text-3xl font-semibold text-amber-500 mb-4">
-                       {serviciosDetallados[activeIndex].titulo}
-                     </h3>
-                     <p className="text-gray-300 leading-relaxed text-lg">
-                       {serviciosDetallados[activeIndex].contenido.descripcion}
-                     </p>
-                   </div>
 
-                   {/* Características Destacadas */}
-                   <div>
-                     <h4 className="text-xl font-semibold text-amber-400 mb-3">
-                       Características Destacadas
-                     </h4>
-                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                       {serviciosDetallados[activeIndex].contenido.caracteristicas.map((item, idx) => (
-                         <div key={idx} className="flex items-center text-gray-300 bg-gray-700 rounded-lg p-3 transition-all duration-300 hover:bg-gray-600">
-                           <span className="text-amber-500 mr-2">★</span>
-                           {item}
-                         </div>
-                       ))}
-                     </div>
-                   </div>
+              {/* Contenido a la derecha */}
+              <div className="sm:w-10/12">
+                <div className="flex flex-col">
+                  {/* <h3 className="text-4xl font-semibold text-amber-500 mb-4 mx-auto">
+                    {serviciosDetallados[activeIndex].titulo}
+                  </h3> */}
+                  <p className="text-gray-300 leading-relaxed text-lg max-w-screen-lg">
+                    {serviciosDetallados[activeIndex].contenido.descripcion}
+                  </p>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start pt-10">
+                    {/* Galería de Imágenes */}
+                    <div className="">
+                      <img
+                        src={serviciosDetallados[activeIndex].imagen}
+                        alt={serviciosDetallados[activeIndex].titulo}
+                        className="rounded-lg shadow-lg size-4/5 mx-auto"
+                      />
+                    </div>
+                    {/* <div>
+                      <p className="text-gray-300 leading-relaxed text-lg">
+                        {serviciosDetallados[activeIndex].contenido.descripcion}
+                      </p>
+                    </div> */}
+                    {/* <img
+                        src={serviciosDetallados[activeIndex].imagenSecundaria}
+                        alt={`${serviciosDetallados[activeIndex].titulo} - Detalle`}
+                        className="rounded-lg shadow-lg"
+                      /> */}
 
-                   {/* Servicios incluidos */}
-                   <div>
-                     <h4 className="text-xl font-semibold text-amber-400 mb-3">
-                       Servicios Incluidos
-                     </h4>
-                     <ul className="space-y-2">
-                       {serviciosDetallados[activeIndex].contenido.servicios.map((item, idx) => (
-                         <li key={idx} className="flex items-center text-gray-300">
-                           <span className="text-amber-500 mr-2">✓</span>
-                           {item}
-                         </li>
-                       ))}
-                     </ul>
-                   </div>
 
-                   {/* Paquetes */}
-                   <div>
-                     <h4 className="text-xl font-semibold text-amber-400 mb-4">
-                       Paquetes Disponibles
-                     </h4>
-                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                       {serviciosDetallados[activeIndex].contenido.paquetes.map((paquete, idx) => (
-                         <div key={idx} className="bg-gray-700 rounded-lg p-4 border border-gray-600 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg hover:shadow-amber-500/20">
-                           <h5 className="text-lg font-semibold text-amber-500 mb-2">
-                             {paquete.nombre}
-                           </h5>
-                           <p className="text-amber-400 font-semibold mb-3">
-                             {paquete.precio}
-                           </p>
-                           <ul className="space-y-1">
-                             {paquete.incluye.map((item, itemIdx) => (
-                               <li key={itemIdx} className="text-sm text-gray-300">
-                                 • {item}
-                               </li>
-                             ))}
-                           </ul>
-                         </div>
-                       ))}
-                     </div>
-                   </div>
+                    {/* Contenido */}
+                    <div className="">
+                      <div>
+                        {/* <h3 className="text-3xl font-semibold text-amber-500 mb-4">
+                          {serviciosDetallados[activeIndex].titulo}
+                        </h3> */}
+                        {/* <p className="text-gray-300 leading-relaxed text-lg">
+                          {serviciosDetallados[activeIndex].contenido.descripcion}
+                        </p> */}
+                      </div>
 
-                   {/* CTA */}
-                   <div className="pt-6">
-                     <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-amber-500/30">
-                       Solicitar Cotización
-                     </button>
-                   </div>
-                 </div>
-               </div>
-             </div>
+                      {/* Características Destacadas */}
+                      <div>
+                        <h4 className="text-xl font-semibold text-amber-400 mb-3">
+                          Características Destacadas
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {serviciosDetallados[activeIndex].contenido.caracteristicas.map((item, idx) => (
+                            <div key={idx} className="flex items-center text-gray-300 bg-gray-700 rounded-lg p-3 transition-all duration-300 hover:bg-gray-600">
+                              <span className="text-amber-500 mr-2">★</span>
+                              {item}
+                            </div>
+                          ))}
+                        </div>
+                      </div>
 
+                      {/* Servicios incluidos */}
+                      <div>
+                      <img
+                        src={serviciosDetallados[activeIndex].imagenSecundaria}
+                        alt={`${serviciosDetallados[activeIndex].titulo} - Detalle`}
+                        className="rounded-lg shadow-lg"
+                      />
+                        <h4 className="text-xl font-semibold text-amber-400 mb-3">
+                          Servicios Incluidos
+                        </h4>
+                        <ul className="space-y-2">
+                          {serviciosDetallados[activeIndex].contenido.servicios.map((item, idx) => (
+                            <li key={idx} className="flex items-center text-gray-300">
+                              <span className="text-amber-500 mr-2">✓</span>
+                              {item}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      {/* Paquetes */}
+                      <div>
+                        <h4 className="text-xl font-semibold text-amber-400 mb-4">
+                          Paquetes Disponibles
+                        </h4>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                          {serviciosDetallados[activeIndex].contenido.paquetes.map((paquete, idx) => (
+                            <div key={idx} className="bg-gray-700 rounded-lg p-4 border border-gray-600 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg hover:shadow-amber-500/20">
+                              <h5 className="text-lg font-semibold text-amber-500 mb-2">
+                                {paquete.nombre}
+                              </h5>
+                              <p className="text-amber-400 font-semibold mb-3">
+                                {paquete.precio}
+                              </p>
+                              <ul className="space-y-1">
+                                {paquete.incluye.map((item, itemIdx) => (
+                                  <li key={itemIdx} className="text-sm text-gray-300">
+                                    • {item}
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* CTA */}
+                      <div className="pt-6">
+                        <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-amber-500/30">
+                          Solicitar Cotización
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
