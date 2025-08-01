@@ -97,7 +97,7 @@ const ServiciosDetallado = () => {
       titulo: 'Graduaciones',
       descripcion: 'Experiencia culinaria de alta calidad',
       imagen: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-      imagenSecundaria: 'https://images.unsplash.com/photo-1523050854058-8df90110c9a1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
+      imagenSecundaria: 'https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
       contenido: {
         descripcion: 'Celebramos el logro académico con eventos memorables que combinan elegancia y diversión. Desde graduaciones de jardín hasta universidad, creamos experiencias únicas.',
         servicios: [
@@ -263,70 +263,22 @@ const ServiciosDetallado = () => {
               <div className="hidden sm:block w-px bg-slate-400 shadow-xl shadow-amber-300">
               </div>
 
-
               {/* Contenido a la derecha */}
               <div className="sm:w-10/12">
                 <div className="flex flex-col">
-                  {/* <h3 className="text-4xl font-semibold text-amber-500 mb-4 mx-auto">
-                    {serviciosDetallados[activeIndex].titulo}
-                  </h3> */}
                   <p className="text-gray-300 leading-relaxed text-lg max-w-screen-lg">
                     {serviciosDetallados[activeIndex].contenido.descripcion}
                   </p>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start pt-10">
-                    {/* Galería de Imágenes */}
-                    <div className="">
-                      <img
-                        src={serviciosDetallados[activeIndex].imagen}
-                        alt={serviciosDetallados[activeIndex].titulo}
-                        className="rounded-lg shadow-lg size-4/5 mx-auto"
-                      />
-                    </div>
-                    {/* <div>
-                      <p className="text-gray-300 leading-relaxed text-lg">
-                        {serviciosDetallados[activeIndex].contenido.descripcion}
-                      </p>
-                    </div> */}
-                    {/* <img
-                        src={serviciosDetallados[activeIndex].imagenSecundaria}
-                        alt={`${serviciosDetallados[activeIndex].titulo} - Detalle`}
-                        className="rounded-lg shadow-lg"
-                      /> */}
-
-
-                    {/* Contenido */}
-                    <div className="">
+                  <div className="flex flex-col gap-12 py-12">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 items-start gap-x-12">
                       <div>
-                        {/* <h3 className="text-3xl font-semibold text-amber-500 mb-4">
-                          {serviciosDetallados[activeIndex].titulo}
-                        </h3> */}
-                        {/* <p className="text-gray-300 leading-relaxed text-lg">
-                          {serviciosDetallados[activeIndex].contenido.descripcion}
-                        </p> */}
+                        <img
+                          src={serviciosDetallados[activeIndex].imagen}
+                          alt={serviciosDetallados[activeIndex].titulo}
+                          className="rounded-lg shadow-lg mx-auto"
+                        />
                       </div>
-
-                      {/* Características Destacadas */}
                       <div>
-                        <h4 className="text-xl font-semibold text-amber-400 mb-3">
-                          Características Destacadas
-                        </h4>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                          {serviciosDetallados[activeIndex].contenido.caracteristicas.map((item, idx) => (
-                            <div key={idx} className="flex items-center text-gray-300 bg-gray-700 rounded-lg p-3 transition-all duration-300 hover:bg-gray-600">
-                              <span className="text-amber-500 mr-2">★</span>
-                              {item}
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Servicios incluidos */}
-                      <div>
-                      <img
-                        src={serviciosDetallados[activeIndex].imagenSecundaria}
-                        alt={`${serviciosDetallados[activeIndex].titulo} - Detalle`}
-                        className="rounded-lg shadow-lg"
-                      />
                         <h4 className="text-xl font-semibold text-amber-400 mb-3">
                           Servicios Incluidos
                         </h4>
@@ -340,38 +292,35 @@ const ServiciosDetallado = () => {
                         </ul>
                       </div>
 
-                      {/* Paquetes */}
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 items-start gap-x-12">
                       <div>
-                        <h4 className="text-xl font-semibold text-amber-400 mb-4">
-                          Paquetes Disponibles
+                        <h4 className="text-xl font-semibold text-amber-400 mb-3">
+                          Características Destacadas
                         </h4>
-                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                          {serviciosDetallados[activeIndex].contenido.paquetes.map((paquete, idx) => (
-                            <div key={idx} className="bg-gray-700 rounded-lg p-4 border border-gray-600 transition-all duration-300 hover:translate-y-[-5px] hover:shadow-lg hover:shadow-amber-500/20">
-                              <h5 className="text-lg font-semibold text-amber-500 mb-2">
-                                {paquete.nombre}
-                              </h5>
-                              <p className="text-amber-400 font-semibold mb-3">
-                                {paquete.precio}
-                              </p>
-                              <ul className="space-y-1">
-                                {paquete.incluye.map((item, itemIdx) => (
-                                  <li key={itemIdx} className="text-sm text-gray-300">
-                                    • {item}
-                                  </li>
-                                ))}
-                              </ul>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {serviciosDetallados[activeIndex].contenido.caracteristicas.map((item, idx) => (
+                            <div key={idx} className="flex items-center text-gray-300 bg-gray-700 rounded-lg p-3 transition-all duration-300 hover:bg-gray-600">
+                              <span className="text-amber-500 mr-2">★</span>
+                              {item}
                             </div>
                           ))}
                         </div>
                       </div>
-
-                      {/* CTA */}
-                      <div className="pt-6">
-                        <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-amber-500/30">
-                          Solicitar Cotización
-                        </button>
+                      <div>
+                        <img
+                          src={serviciosDetallados[activeIndex].imagenSecundaria}
+                          alt={`${serviciosDetallados[activeIndex].titulo} - Detalle`}
+                          className="rounded-lg shadow-lg mx-auto"
+                        />
                       </div>
+
+
+                      {/* <div className="pt-6">
+                          <button className="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-500 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:translate-y-[-2px] hover:shadow-lg hover:shadow-amber-500/30">
+                            Solicitar Cotización
+                          </button>
+                        </div> */}
                     </div>
                   </div>
                 </div>
