@@ -374,6 +374,22 @@
     "@eslint/core" "^0.15.1"
     levn "^0.4.1"
 
+"@formspree/core@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@formspree/core/-/core-4.0.0.tgz#3425bdcbcf8669c1540f66adc9158adcb075096d"
+  integrity sha512-geNlUut5nME1Ztej5Pzx1BrlQ1fFIcJYIqmF+Vm0jaUbpZxjXvt7SDOGeQVkuxn80QJiIHlwBGGjSBFjPX/KDw==
+  dependencies:
+    "@stripe/stripe-js" "^5.7.0"
+
+"@formspree/react@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@formspree/react/-/react-3.0.0.tgz#9d8cc5cb5c7ef18f0606dbc9415d8c3d21425467"
+  integrity sha512-8PufBZ4l13VmCp9xTGQXwyF6mZtYSecqgTlFuMo5Fbe4Q6zUk7PMU2uKOwIaytZyTyJgFVCvdbpQElPPBKYNLw==
+  dependencies:
+    "@formspree/core" "^4.0.0"
+    "@stripe/react-stripe-js" "^3.1.1"
+    "@stripe/stripe-js" "^5.7.0"
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"
@@ -570,6 +586,18 @@
   version "4.45.1"
   resolved "https://registry.yarnpkg.com/@rollup/rollup-win32-x64-msvc/-/rollup-win32-x64-msvc-4.45.1.tgz#e5085c6d13da15b4c5133cd2a6bb11f25b6bb77a"
   integrity sha512-M/fKi4sasCdM8i0aWJjCSFm2qEnYRR8AMLG2kxp6wD13+tMGA4Z1tVAuHkNRjud5SW2EM3naLuK35w9twvf6aA==
+
+"@stripe/react-stripe-js@^3.1.1":
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/@stripe/react-stripe-js/-/react-stripe-js-3.8.1.tgz#dcbf147d3756ffa012c176d14a11c3d3719f42eb"
+  integrity sha512-BExESIwXDwZgUqFmWj046BGpsqK4vNaBCdcmRvagQzOovjO2aBAt8rofW47K1TJRnt3iTH5dciBdHJ7ZA958ng==
+  dependencies:
+    prop-types "^15.7.2"
+
+"@stripe/stripe-js@^5.7.0":
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/@stripe/stripe-js/-/stripe-js-5.10.0.tgz#4d1fcf8c59530865fcd59ce910798cc9c973a870"
+  integrity sha512-PTigkxMdMUP6B5ISS7jMqJAKhgrhZwjprDqR1eATtFfh0OpKVNp110xiH+goeVdrJ29/4LeZJR4FaHHWstsu0A==
 
 "@types/babel__core@^7.20.5":
   version "7.20.5"
@@ -1636,7 +1664,7 @@ primereact@^10.9.6:
     "@types/react-transition-group" "^4.4.1"
     react-transition-group "^4.4.1"
 
-prop-types@^15.6.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -1818,16 +1846,7 @@ source-map-js@^1.2.1:
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.2.1.tgz#1ce5650fddd87abc099eda37dcff024c2667ae46"
   integrity sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==
 
-"string-width-cjs@npm:string-width@^4.2.0":
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
-  integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
-  dependencies:
-    emoji-regex "^8.0.0"
-    is-fullwidth-code-point "^3.0.0"
-    strip-ansi "^6.0.1"
-
-string-width@^4.1.0:
+"string-width-cjs@npm:string-width@^4.2.0", string-width@^4.1.0:
   version "4.2.3"
   resolved "https://registry.yarnpkg.com/string-width/-/string-width-4.2.3.tgz#269c7117d27b05ad2e536830a8ec895ef9c6d010"
   integrity sha512-wKyQRQpjJ0sIp62ErSZdGsjMJWsap5oRNihHhu6G7JVO/9jIB6UyevL+tXuOqrng8j/cxKTWyWUwvSTriiZz/g==
@@ -1845,14 +1864,7 @@ string-width@^5.0.1, string-width@^5.1.2:
     emoji-regex "^9.2.2"
     strip-ansi "^7.0.1"
 
-"strip-ansi-cjs@npm:strip-ansi@^6.0.1":
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
-  integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
-  dependencies:
-    ansi-regex "^5.0.1"
-
-strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+"strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==

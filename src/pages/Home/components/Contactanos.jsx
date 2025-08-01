@@ -3,6 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';
+import { useForm } from '@formspree/react';
 
 // Esquema de validación con Yup
 const validationSchema = Yup.object({
@@ -28,8 +29,11 @@ const validationSchema = Yup.object({
     .max(500, 'El mensaje no puede exceder 500 caracteres')
 });
 
-const Contactanos = ({detallado}) => {
+const Contactanos = ({ detallado }) => {
+
+  const formId = import.meta.env.VITE_FORM_ID;
   const toast = useRef(null);
+  const [state, handleSubmit] = useForm(formId);
 
   const initialValues = {
     nombre: '',
@@ -41,67 +45,58 @@ const Contactanos = ({detallado}) => {
     mensaje: ''
   };
 
-  const handleSubmit = async (values, { setSubmitting, resetForm }) => {
+  // Manejar el envío del formulario con Formik y Formspree
+  const handleFormSubmit = async (values, { setSubmitting, resetForm }) => {
     try {
-      const response = await fetch('/', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: new URLSearchParams({
-          'form-name': 'contact',
-          ...values
-        })
-      });
+      // Enviar usando Formspree
+      const result = await handleSubmit(values);
+      console.log('Resultado de handleSubmit:', result);
+      console.log('Estado actual:', state);
 
-      if (response.ok) {
-        toast.current.show({
-          severity: 'success',
-          summary: '¡Éxito!',
-          detail: '¡Gracias por contactarnos! Te responderemos pronto.',
-          life: 5000,
-          className: 'bg-green-500 text-white border-green-600'
-        });
-        resetForm();
+      if (state.result != null) {
+        if (state.succeeded) {
+          toast.current.show({
+            severity: 'success',
+            summary: '¡Éxito!',
+            detail: '¡Gracias por contactarnos! Te responderemos pronto.',
+            life: 5000,
+            className: 'bg-green-500 text-white border-green-600'
+          });
+          resetForm();
+          setSubmitting(false);
+        } else {
+          toast.current.show({
+            severity: 'error',
+            summary: 'Error',
+            detail: 'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.',
+            life: 5000,
+            className: 'bg-red-500 text-white border-red-600'
+          });
+        }
       }
     } catch (error) {
       console.error('Error:', error);
-      toast.current.show({
-        severity: 'error',
-        summary: 'Error',
-        detail: 'Hubo un error al enviar el formulario. Por favor, inténtalo de nuevo.',
-        life: 5000,
-        className: 'bg-red-500 text-white border-red-600'
-      });
-    } finally {
-      setSubmitting(false);
     }
   };
 
   return (
-    <section id="contactanos" className={`bg-black text-white ${detallado ? 'sm:py-8':'py-10 sm:py-12'} `}>
+    <section id="contactanos" className={`bg-black text-white ${detallado ? 'sm:py-8' : 'py-10 sm:py-12'} `}>
       <Toast ref={toast} />
       <div className="max-w-[120vh] mx-auto px-4 sm:px-8">
         <div className="text-center">
-          <h2 className={`${detallado ? 'italic text-5xl sm:text-6xl': 'text-6xl sm:text-7xl'} text-center font-cormorant text-amber-500 font-medium leading-none`}>Solicita tu Cotización</h2>
+          <h2 className={`${detallado ? 'italic text-5xl sm:text-6xl' : 'text-6xl sm:text-7xl'} text-center font-cormorant text-amber-500 font-medium leading-none`}>Solicita tu Cotización</h2>
         </div>
         <div className="pt-10 sm:pt-20">
           {/* Formulario con Formik */}
           <div className="w-full bg-slate-600 rounded-lg p-4 sm:p-8">
-            {/* <div className='flex'>
-              <h3 className="text-4xl font-semibold mb-8 text-gold-400 font-cormorant text-amber-500 mx-auto">Solicita tu Cotización</h3>
-            </div> */}
 
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
-              // onSubmit={handleSubmit}
+              onSubmit={handleFormSubmit}
             >
               {({ isSubmitting, errors, touched }) => (
-                <Form
-                  method="POST"
-                  netlify
-                  name="contact"
-                >
-                  <input type="hidden" name="form-name" value="contact" />
+                <Form>
                   <div className='flex flex-col gap-4'>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
@@ -270,9 +265,9 @@ const Contactanos = ({detallado}) => {
                         type="submit"
                         className="border border-1 border-amber-400 hover:bg-amber-600 hover:border-amber-600 text-white font-semibold px-8 py-3 rounded-md mx-auto"
                         severity='success'
-                        disabled={isSubmitting}
+                        disabled={isSubmitting || state.submitting}
                       >
-                        {isSubmitting ? 'Enviando...' : 'Enviar Solicitud'}
+                        {isSubmitting || state.submitting ? 'Enviando...' : 'Enviar Solicitud'}
                       </Button>
                     </div>
                   </div>
