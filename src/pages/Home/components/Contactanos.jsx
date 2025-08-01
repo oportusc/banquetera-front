@@ -93,7 +93,7 @@ const Contactanos = ({detallado}) => {
             <Formik
               initialValues={initialValues}
               validationSchema={validationSchema}
-              onSubmit={handleSubmit}
+              // onSubmit={handleSubmit}
             >
               {({ isSubmitting, errors, touched }) => (
                 <Form
