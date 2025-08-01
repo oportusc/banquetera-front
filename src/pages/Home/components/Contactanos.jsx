@@ -98,8 +98,9 @@ const Contactanos = ({detallado}) => {
               {({ isSubmitting, errors, touched }) => (
                 <Form
                   name="contact"
+                  netlify
                   method="POST"
-                  data-netlify="true"
+                  // data-netlify="true"
                 // className="space-y-4"
                 >
                   <input type="hidden" name="form-name" value="contact" />
