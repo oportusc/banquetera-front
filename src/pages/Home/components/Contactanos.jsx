@@ -97,11 +97,8 @@ const Contactanos = ({detallado}) => {
             >
               {({ isSubmitting, errors, touched }) => (
                 <Form
-                  name="contact"
-                  netlify
                   method="POST"
-                  // data-netlify="true"
-                // className="space-y-4"
+                  data-netlify="true"
                 >
                   <input type="hidden" name="form-name" value="contact" />
                   <div className='flex flex-col gap-4'>
